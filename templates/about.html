@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | SpamWatch AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/card-animations.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/about-style.css') }}" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SpamWatch<span>.AI</span></div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <!-- <li><a href="{{ url_for('tools') }}">Tools</a></li>  -->
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+        
+      </ul>
+      <!--
+      <div class="nav-buttons">
+        <a href="{{ url_for('login') }}" class="signin">Sign In</a>
+        <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+      </div>
+      -->
+    </nav>
+  </header>
+  <div class="container">
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/about.css') }}" />
+  <h1 class="about-title">About SpamWatch AI</h1>
+
+    <section>
+      <h2>Our Objective</h2>
+      <p>
+        At <strong>SpamWatch AI</strong>, our mission is to create a safer digital space by empowering everyone to detect and block fake and spam emails, deepfakes, and fraudulent messages in real time. In an age of misinformation and cyber threats, our goal is simple — <em>make trust easy and fraud detection smarter</em> using advanced AI.
+      </p>
+    </section>
+
+    <section>
+      <h2>What is SpamWatch AI?</h2>
+      <p>
+        <strong>SpamWatch AI</strong> is an all-in-one intelligent tool that analyzes your emails, messages, videos, and images to verify their authenticity. Whether you’re a student, professional, journalist, or everyday internet user — SpamWatch AI helps you separate truth from deception in seconds.
+      </p>
+    </section>
+
+    <section>
+      <h2>Our Tools</h2>
+      <h3>1️⃣ Spam Email Detector</h3>
+      <p>Upload or paste any suspicious email. Our AI scans headers, language, links, and attachments to detect phishing or scam emails with a clear authenticity score.</p>
+
+      <h3>2️⃣ Fake WhatsApp Message Detector</h3>
+      <p>Paste the message. SpamWatch AI analyzes text patterns, sources, and context to spot fake or manipulated messages instantly.</p>
+
+      <h3>3️⃣ Deepfake Image & Video Detector</h3>
+      <p>Upload an image or video to check for AI-generated deepfakes. Our system uses facial recognition and deep learning to flag synthetic or manipulated visuals.</p>
+
+    </section>
+
+    <section class="founder">
+      <img src="{{ url_for('static', filename='static_css/founder.jpeg') }}" alt="Founder Photo">
+      <h2>About Me — The Founder</h2>
+      <p>Hi! I’m <strong>Mandavi Vaishya</strong>, the creator of <strong>SpamWatch AI</strong>. As a tech enthusiast and aspiring data analyst, I believe that technology should empower people to make informed decisions and stay safe online. I built SpamWatch AI to solve a real problem — the flood of fake news, scams, and misleading content we all face daily. Thank you for trusting SpamWatch AI to protect what matters most: <em>your peace of mind</em>.</p>
+    </section>
+
+    <footer>
+      &copy; 2025 SpamWatch AI. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>

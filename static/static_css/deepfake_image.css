@@ -1,0 +1,227 @@
+/* deepfake_image.css - extracted from inline styles in deepfake_image.html */
+
+.input-file-custom {
+  margin-bottom: 1.5rem;
+  background: #23235b;
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.flash-message {
+  color: #ff6b6b;
+  background: #29295e;
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+#result-container.card, #analysis-report.card {
+  margin: 2rem auto;
+  background: #23235b;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 14px;
+}
+
+#result-container.card {
+  max-width: 400px;
+  text-align: center;
+}
+
+#analysis-report.card {
+  max-width: 600px;
+  text-align: left;
+}
+
+.uploaded-image-preview {
+  margin: 2rem auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.uploaded-image-preview img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.final-classification {
+  color: #a78bfa;
+}
+/* Enhanced Styles for Deepfake Image Detection page */
+
+body {
+  background: linear-gradient(135deg, #1a1a2e, #121229);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #23235b;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #a78bfa;
+  letter-spacing: 1.5px;
+  user-select: none;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #cbb7ff;
+}
+
+.nav-buttons a {
+  margin-left: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.nav-buttons .signin {
+  color: #a78bfa;
+}
+
+.nav-buttons .signin:hover {
+  color: #cbb7ff;
+}
+
+.nav-buttons .btn {
+  background-color: #a78bfa;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(167, 139, 250, 0.6);
+}
+
+.nav-buttons .btn:hover {
+  background-color: #cbb7ff;
+  box-shadow: 0 6px 16px rgba(203, 183, 255, 0.8);
+  color: #1a1a2e;
+}
+
+.tools {
+  max-width: 650px;
+  margin: 4rem auto;
+  padding: 2.5rem 3rem;
+  background-color: #23235b;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+  transition: box-shadow 0.3s ease;
+}
+
+.tools:hover {
+  box-shadow: 0 12px 36px rgba(167, 139, 250, 0.8);
+}
+
+.tools h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.tools p {
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+  color: #d1c4e9;
+}
+
+.tools form input[type="file"] {
+  background: #23235b;
+  color: #fff;
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+  border: none;
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 0 8px rgba(167, 139, 250, 0.5);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.tools form input[type="file"]:hover {
+  box-shadow: inset 0 0 12px rgba(203, 183, 255, 0.8);
+}
+
+.tools form button {
+  background-color: #a78bfa;
+  border: none;
+  padding: 0.85rem 2.5rem;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(167, 139, 250, 0.7);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.tools form button:hover {
+  background-color: #cbb7ff;
+  box-shadow: 0 8px 24px rgba(203, 183, 255, 0.9);
+  color: #1a1a2e;
+}
+
+#result-container {
+  margin: 3rem auto;
+  max-width: 450px;
+  background: #2e2e6e;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(167, 139, 250, 0.8);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+#result-container h3 span {
+  color: #d1c4e9;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 16px;
+  margin-top: 1.5rem;
+  box-shadow: 0 8px 24px rgba(167, 139, 250, 0.6);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}

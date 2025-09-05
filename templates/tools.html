@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Tools - SpamWatch AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/tools.css') }}">
+</head>
+<body>
+  <!-- Floating Background Bubbles -->
+  <div class="floating-bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+  <div class="navbar-container">
+      <div class="logo">SpamWatch<span>.AI</span></div>
+      <ul class="nav-links">
+         
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('tools') }}">Tools</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+       
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Tools Section -->
+  <section class="tools-section">
+    <h1 class="section-title">✨ Our Amazing Tools</h1>
+    <p class="section-subtitle">
+      Discover powerful AI tools designed to protect you from spam and detect deepfakes with cutting-edge accuracy
+    </p>
+
+    <div class="tools-grid">
+      <!-- Spam Text Detection -->
+      <a href="{{ url_for('spam_text_route') }}" class="card-link">
+        <div class="tool-card glow">
+          <div class="tool-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="tool-title">Spam Text Protection</h3>
+          <p class="tool-description">
+            Advanced AI algorithms that detect and filter spam messages with 99.9% accuracy. Protect your inbox from unwanted content.
+          </p>
+        </div>
+      </a>
+
+      <!-- Deepfake Image Detection -->
+      <a href="{{ url_for('deepfake_image_route') }}" class="card-link">
+        <div class="tool-card glow">
+          <div class="tool-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3 class="tool-title">Deepfake Image Detection</h3>
+          <p class="tool-description">
+            State-of-the-art image analysis to identify manipulated photos and AI-generated content. Stay safe from visual deception.
+          </p>
+        </div>
+      </a>
+
+      <!-- Deepfake Video Detection -->
+      <a href="{{ url_for('deepfake_video_route') }}" class="card-link">
+        <div class="tool-card glow">
+          <div class="tool-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3 class="tool-title">Deepfake Video Detection</h3>
+          <p class="tool-description">
+            Sophisticated video analysis to spot deepfake videos and synthetic media. Verify authenticity with confidence.
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <script>
+    // Animate cards on scroll
+    function animateCards() {
+      const cards = document.querySelectorAll('.tool-card');
+      const trigger = window.innerHeight * 0.8;
+      
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < trigger) {
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, index * 200);
+        }
+      });
+    }
+
+    // Add staggered animation on load
+    window.addEventListener('load', () => {
+      setTimeout(animateCards, 500);
+    });
+
+    window.addEventListener('scroll', animateCards);
+
+    // Add hover sound effect (optional)
+    const cards = document.querySelectorAll('.tool-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.classList.add('pulse');
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('pulse');
+      });
+    });
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+<!--
+
+Plan to enhance tools.html page:
+- Revamp the UI to a more modern, cute, and professional look with a consistent color scheme and typography.
+- Add smooth hover animations and transitions on the cards and buttons.
+- Introduce subtle background animations or gradients for a dynamic feel.
+- Use CSS keyframe animations for fade-in, scale, and shadow effects on cards.
+- Improve layout responsiveness and spacing for better visual balance.
+- Possibly add some SVG or icon animations for extra polish.
+- Keep the existing structure but move inline styles to CSS classes for maintainability.
+- Ensure the page remains performant and accessible.
+
+Dependent files to edit:
+- templates/tools.html (main content and structure)
+- static/static_css/style.css (add new styles and animations)
+- Possibly static/static_css/card-animations.css or dynamic-animations.css if relevant
+
+Follow-up steps:
+- After edits, test the page in browser for responsiveness and animation smoothness.
+- Get user feedback on the new look and feel.
+
+Please confirm if I can proceed with this plan or if you want to add any specific style or animation preferences. Also, let me know if you want me to create new CSS files or update existing ones. 
+
+<ask_followup_question>
+<question>Can I proceed with the above plan to enhance the tools.html page with improved UI and animations?</question>
+</ask_followup_question>
+-->

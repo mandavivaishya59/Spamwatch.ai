@@ -1,0 +1,44 @@
+/* Card and link styles for interactive, animated tool cards */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+  border-radius: 18px;
+}
+
+.card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+
+.card-link:hover .card, .card-link:focus .card {
+  box-shadow: 0 10px 30px rgba(167, 139, 250, 0.3), 0 8px 32px rgba(0,0,0,0.16), 0 3px 12px rgba(0,0,0,0.08);
+  transform: translateY(-10px) scale(1.04) rotate(-1deg);
+}
+
+.card-link:hover .card img, .card-link:focus .card img {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.tool-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  .tool-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    min-width: 90vw;
+    max-width: 95vw;
+  }
+}

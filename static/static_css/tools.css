@@ -1,0 +1,250 @@
+/* Navbar container extracted from inline style in tools.html */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Extracted from tools.html <style> tag */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.floating-bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  animation: float 6s ease-in-out infinite;
+}
+.bubble:nth-child(1) { left: 10%; animation-delay: 0s; width: 80px; height: 80px; }
+.bubble:nth-child(2) { left: 20%; animation-delay: 1s; width: 60px; height: 60px; }
+.bubble:nth-child(3) { left: 35%; animation-delay: 2s; width: 100px; height: 100px; }
+.bubble:nth-child(4) { left: 50%; animation-delay: 0s; width: 40px; height: 40px; }
+.bubble:nth-child(5) { left: 70%; animation-delay: 3s; width: 90px; height: 90px; }
+.bubble:nth-child(6) { left: 85%; animation-delay: 2s; width: 70px; height: 70px; }
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 52, 96, 0.8);
+  border-bottom: 1px solid rgba(15, 52, 96, 0.5);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #f093fb, #f5576c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  align-content: left;
+  margin-right: 50rem;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 0;
+}
+.nav-links a {
+  color: rgba(224, 224, 224, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.nav-links a:hover {
+  color: #a29bfe;
+  transform: translateY(-2px);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #f093fb, #f5576c);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.tools-section {
+  padding: 120px 2rem 4rem;
+  position: relative;
+  z-index: 10;
+}
+.section-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #fff, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+@keyframes titleGlow {
+  from { text-shadow: 0 0 20px rgba(240, 147, 251, 0.5); }
+  to { text-shadow: 0 0 30px rgba(240, 147, 251, 0.8), 0 0 40px rgba(240, 147, 251, 0.6); }
+}
+.section-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tool-card {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(26, 26, 46, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+}
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.tool-card:hover::before {
+  opacity: 1;
+}
+.tool-card:hover {
+  transform: translateY(-15px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border-color: rgba(26, 26, 46, 0.7);
+}
+.tool-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+.tool-icon i {
+  font-size: 4rem;
+  background: linear-gradient(45deg, #f093fb, #f5576c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+.tool-card:hover .tool-icon i {
+  transform: scale(1.2) rotate(10deg);
+}
+.tool-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+.tool-title:hover {
+  color: #a29bfe;
+}
+.tool-description {
+  font-size: 1.1rem;
+  color: rgba(224, 224, 224, 0.7);
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+.tool-card:hover .tool-title {
+  color: #f093fb;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+.card-link:hover {
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  .tool-card {
+    padding: 2rem 1.5rem;
+  }
+}
+.pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { box-shadow: 0 0 20px rgba(240, 147, 251, 0.2); }
+  to { box-shadow: 0 0 30px rgba(240, 147, 251, 0.4), 0 0 40px rgba(240, 147, 251, 0.2); }
+}

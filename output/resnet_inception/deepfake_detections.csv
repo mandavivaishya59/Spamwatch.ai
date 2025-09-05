@@ -1,0 +1,2 @@
+media_name,frame_number,is_deepfake,confidence,model_name
+image.jpg,0,False,1.0,ResNetInception

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spam Text Detection - SpamWatch AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/spam_text.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SpamWatch<span>.AI</span></div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('tools') }}">Tools</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+      </ul>
+      <!--
+      <div class="nav-buttons">
+        <a href="{{ url_for('login') }}" class="signin">Sign In</a>
+        <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+      </div>
+      -->
+    </nav>
+  </header>
+
+  <main>
+    <section class="tools" id="tools">
+      <h2>Spam Text Detection</h2>
+      <p>Paste your message below and let our AI detect if it's spam or not.</p>
+      <form method="POST" action="/spam_text">
+        <textarea name="text" placeholder="Paste your message here..." rows="8">{{ request.form.text if request.method == 'POST' else '' }}</textarea>
+        <br>
+        <button type="submit" class="btn">Detect Spam</button>
+      </form>
+      {% if result is defined and score is defined %}
+      <div id="result-container">
+        <h3>Result: <span>{{ result }}</span></h3>
+        <p>Confidence: <strong>{{ score }}%</strong></p>
+      </div>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* Hero Section Animation */
+/* Slower, more pronounced hero animation */
+.hero-content h1 {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroFadeIn 2.2s cubic-bezier(0.23, 1, 0.32, 1) 0.4s forwards;
+}
+.hero-content p {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroFadeIn 2.2s cubic-bezier(0.23, 1, 0.32, 1) 1.0s forwards;
+}
+.hero-buttons {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroFadeIn 2.2s cubic-bezier(0.23, 1, 0.32, 1) 1.6s forwards;
+}
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Tool Card Animations */
+.tool-cards {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.5rem;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media (max-width: 1100px) {
+  .tool-cards {
+    gap: 1.2rem;
+    max-width: 98vw;
+  }
+  .card {
+    min-width: 260px;
+    max-width: 320px;
+  }
+}
+@media (max-width: 950px) {
+  .tool-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 900px) {
+  .tool-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90vw;
+    min-width: 220px;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+  }
+}
+.card-link {
+  text-decoration: none;
+}
+/* Dark, glassy card style for better contrast */
+/* Slower card entrance and hover transitions */
+.card {
+  opacity: 0;
+  transform: translateY(60px) scale(0.96);
+  transition: box-shadow 0.5s, transform 0.5s, opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  border-radius: 18px;
+  background: rgba(20, 20, 30, 0.82);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  will-change: transform, opacity;
+  border: 1.5px solid rgba(255,255,255,0.08);
+}
+.card.visible {
+  opacity: 1;
+  transform: none;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.32);
+  transform: translateY(-8px) scale(1.04) rotate(-1deg);
+  background: rgba(30, 30, 50, 0.95);
+  transition: box-shadow 0.7s, transform 0.7s, background 0.7s;
+}
+.card img {
+  transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: brightness(5) invert(1) grayscale(1) drop-shadow(0 2px 8px #fff2);
+}
+.card:hover img {
+  transform: scale(1.12) rotate(6deg);
+}
+
+/* About Section Animation */
+/* Slower about section entrance, animation only (no style override) */
+.about .container > section, .about .founder {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.6s cubic-bezier(0.23, 1, 0.32, 1), transform 1.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.about .container > section.visible, .about .founder.visible {
+  opacity: 1;
+  transform: none;
+}

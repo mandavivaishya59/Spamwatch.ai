@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Deepfake Video Detection - SpamWatch AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/card-animations.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/deepfake_video.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SpamWatch<span>.AI</span></div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('tools') }}">Tools</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+      </ul>
+      <!--
+      <div class="nav-buttons">
+        <a href="{{ url_for('login') }}" class="signin">Sign In</a>
+        <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+      </div>
+      -->
+    </nav>
+  </header>
+
+  <main>
+    <section class="tools" id="tools">
+      <h2>Deepfake Video Detection</h2>
+      <p>Upload a video and our AI will analyze it for deepfake manipulation.</p>
+      <form method="POST" action="/deepfake_video" enctype="multipart/form-data">
+  <input type="file" name="video" accept="video/*" class="input-file-custom" />
+        <br>
+        <button type="submit" class="btn">Detect Video</button>
+      </form>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="flash-message">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      {% if result and score is not none %}
+  <div id="result-container" class="card">
+  <h3>Result: <span class="final-classification">{{ result }}</span></h3>
+        <p>Confidence: <strong>{{ score }}%</strong></p>
+      </div>
+      {% endif %}
+      {% if video_url %}
+  <div class="uploaded-video-preview">
+        <h3>Uploaded Video Preview:</h3>
+  <video controls class="video-preview-element">
+          <source src="{{ url_for('static', filename=video_url.split('static/')[-1]) if 'static/' in video_url else '/' + video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

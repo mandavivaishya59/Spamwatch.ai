@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Result - SpamWatch AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/card-animations.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SpamWatch<span>.AI</span></div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('tools') }}">Tools</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/result.css') }}" />
+  <main class="result-main">
+    <h1>Detection Result</h1>
+    <h2>Result: {{ result }}</h2>
+    <p>Confidence: {{ score }}</p>
+    <a href="{{ url_for('tools') }}" class="btn">Back to Tools</a>
+  </main>
+</body>
+</html>

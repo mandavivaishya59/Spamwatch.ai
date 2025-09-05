@@ -1,0 +1,69 @@
+/* login.css - extracted from inline styles in login.html */
+
+.login-body {
+  background: linear-gradient(120deg, #23235b 0%, #1c1c3a 100%);
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.login-card {
+  background: #23235b;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44, 44, 84, 0.18);
+  padding: 2.5rem 2.2rem 2rem 2.2rem;
+  color: #fff;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-title {
+  color: #a78bfa;
+  margin-bottom: 1.7rem;
+  font-weight: 700;
+}
+
+.login-form {
+  margin-bottom: 1.2rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.85rem;
+  margin: 0.7rem 0;
+  border-radius: 8px;
+  border: none;
+  background: #29295e;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 1.1rem;
+  background: linear-gradient(90deg, #a78bfa 0%, #6d28d9 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.switch-link {
+  color: #a78bfa;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  display: inline-block;
+  font-size: 1rem;
+}

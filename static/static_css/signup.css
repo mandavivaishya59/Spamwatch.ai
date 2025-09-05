@@ -1,0 +1,10 @@
+/* signup.css - extracted from inline styles in signup.html */
+
+.flash-message {
+  color: #ff6b6b;
+  background: #29295e;
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  margin-bottom: 1em;
+  font-weight: 600;
+}

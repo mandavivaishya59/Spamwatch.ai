@@ -1,0 +1,37 @@
+/* index.css - extracted from inline styles in index.html */
+
+.hero {
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+#heroVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.about {
+  background: transparent;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.nav-buttons {
+  width: 60px;
+}

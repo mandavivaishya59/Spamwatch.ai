@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Deepfake Image Detection - SpamWatch AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/card-animations.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/deepfake_image.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SpamWatch<span>.AI</span></div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('tools') }}">Tools</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+      </ul>
+      <!--
+      <div class="nav-buttons">
+        <a href="{{ url_for('login') }}" class="signin">Sign In</a>
+        <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+      </div>
+      -->
+    </nav>
+  </header>
+
+  <main>
+    <section class="tools" id="tools">
+      <h2>Deepfake Image Detection</h2>
+      <p>Upload an image and our AI will analyze it for deepfake manipulation.</p>
+      <form method="POST" action="/deepfake_image" enctype="multipart/form-data">
+  <input type="file" name="image" accept="image/*" class="input-file-custom" />
+        <br>
+        <button type="submit" class="btn">Detect Image</button>
+      </form>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="flash-message">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      {% if result and score is not none %}
+  <div id="result-container" class="card">
+  <h3>Result: <span class="final-classification">{{ result }}</span></h3>
+        <p>Confidence: <strong>{{ score }}%</strong></p>
+      </div>
+      {% endif %}
+      {% if image_url %}
+  <div class="uploaded-image-preview">
+        <h3>Uploaded Image Preview:</h3>
+  <img src="{{ url_for('static', filename=image_url.split('static/')[-1]) if 'static/' in image_url else '/' + image_url }}" alt="Uploaded Image" />
+      </div>
+      {% endif %}
+      {% if analysis_report %}
+  <div id="analysis-report" class="card">
+        <h3>Deepfake Image Analysis Report</h3>
+        <p><strong>Image:</strong> {{ analysis_report.image_path }}</p>
+        <p><strong>Total Frames Analyzed:</strong> {{ analysis_report.total_frames }}</p>
+        <p><strong>Frames Detected as Deepfake:</strong> {{ analysis_report.deepfake_frames }}</p>
+        <p><strong>Frames Detected as Real:</strong> {{ analysis_report.real_frames }}</p>
+  <p><strong>Final Classification:</strong> <span class="final-classification">{{ analysis_report.final_classification }}</span></p>
+        <p><strong>Model Used:</strong> {{ analysis_report.model_used }}</p>
+      </div>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

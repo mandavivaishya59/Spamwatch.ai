@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - SpamWatch AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/card-animations.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    .signup-container {
+      max-width: 400px;
+      margin: 60px auto;
+      background: #1c1c3a;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      padding: 2.5rem 2rem 2rem 2rem;
+      color: #fff;
+      text-align: center;
+    }
+    .signup-container h2 {
+      margin-bottom: 1.5rem;
+      color: #a78bfa;
+    }
+    .signup-container input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.7rem 0;
+      border-radius: 8px;
+      border: none;
+      background: #23235b;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .signup-container .btn {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .signup-container .switch-link {
+      color: #a78bfa;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 1.2rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SpamWatch<span>.AI</span></div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('tools') }}">Tools</a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+      </ul>
+    </nav>
+  </header>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/signup.css') }}" />
+  <main>
+    <div class="signup-container">
+      <h2>Create Your Account</h2>
+      {% if error %}
+        <div class="flash-message">{{ error }}</div>
+      {% endif %}
+      <form method="POST" action="/signup">
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required />
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+      <a class="switch-link" href="{{ url_for('login') }}">Already have an account? Sign in</a>
+    </div>
+  </main>
+  <script>
+    // Detect window/tab close to stop session
+    window.addEventListener('beforeunload', function (e) {
+      navigator.sendBeacon('/stop_session');
+    });
+  </script>
+</body>
+</html>

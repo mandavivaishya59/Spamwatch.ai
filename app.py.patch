@@ -1,0 +1,10 @@
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'youruser'
+app.config['MYSQL_PASSWORD'] = 'yourpassword'
+app.config['MYSQL_DB'] = 'yourdb'
+=======
+# MySQL config (update with your credentials)
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'spamwatchuser'
+app.config['MYSQL_PASSWORD'] = 'StrongPassword123!'
+app.config['MYSQL_DB'] = 'spamwatchdb'

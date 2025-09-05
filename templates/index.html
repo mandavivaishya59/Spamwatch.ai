@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SpamWatch AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/card-animations.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/about-style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/section-enhancements.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/dynamic-animations.css') }}" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">SpamWatch<span>.AI</span></div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <!--<li><a href="{{ url_for('tools') }}">Tools</a></li> -->
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+        <li><a href="{{ url_for('index') }}"> </a></li>
+      </ul>
+  </div class="nav-buttons"></div>
+      <!--
+      <div class="nav-buttons">
+        <a href="{{ url_for('login') }}" class="signin">Sign In</a>
+        <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+      </div>
+      -->
+    </div>
+  </header>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='static_css/index.css') }}" />
+  <section class="hero">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="https://cdn.pixabay.com/video/2024/02/04/199285-909903160_tiny.mp4" type="video/mp4" />
+    </video>
+  <div class="hero-content">
+      <h1>AI-Powered<br><span>Spam Detection</span></h1>
+      <p>Protect yourself from spam emails, deepfakes, and scams with advanced AI algorithms.</p>
+      <div class="hero-buttons">
+        <a href="{{ url_for('signup') }}" class="btn">Start Detection</a>
+        <a href="{{ url_for('about') }}" class="btn secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!--
+
+   <section class="tools" id="tools">
+    <h2>Our Tools</h2>
+    <p>Explore AI tools for spam text detection, deepfake Image and videos Analysis.</p>
+
+    <div class="tool-cards">
+      <a href="{{ url_for('spam_text_route') }}" class="card-link">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/128/3115/3115518.png" alt="Text">
+          <h3>Spam Text Protection </h3>
+          <p>Detect spam Text with accuracy.</p>
+        </div>
+      </a>
+
+      <a href="{{ url_for('deepfake_image_route') }}" class="card-link">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/128/1829/1829552.png" alt="Image">
+          <h3>Deepfake Image Detection</h3>
+          <p>Identify manipulated Image.</p>
+        </div>
+      </a>
+
+      <a href="{{ url_for('deepfake_video_route') }}" class="card-link">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/128/860/860780.png" alt="Message">
+          <h3>Deepfake Video Detection</h3>
+          <p>Identify manipulated Videos.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    
+    <div class="container">
+      <div class="container about-container"></div>
+    <h1>About SpamWatch AI</h1>
+
+    <section>
+      <h2>Our Objective</h2>
+      <p>
+        At <strong>SpamWatch AI</strong>, our mission is to create a safer digital space by empowering everyone to detect and block fake news, scams, spam emails, deepfakes, and fraudulent messages in real time. In an age of misinformation and cyber threats, our goal is simple — <em>make trust easy and fraud detection smarter</em> using advanced AI.
+      </p>
+    </section>
+
+    <section>
+      <h2>What is SpamWatch AI?</h2>
+      <p>
+        <strong>SpamWatch AI</strong> is an all-in-one intelligent tool that analyzes your emails, messages, PDFs, videos, and images to verify their authenticity. Whether you’re a student, professional, journalist, or everyday internet user — SpamWatch AI helps you separate truth from deception in seconds.
+      </p>
+    </section>
+
+    <section>
+      <h2>Our Tools</h2>
+      <h3>1️⃣ Spam Email Detector</h3>
+      <p>Upload or paste any suspicious email. Our AI scans headers, language, links, and attachments to detect phishing or scam emails with a clear authenticity score.</p>
+
+      <h3>2️⃣ Fake WhatsApp Message Detector</h3>
+      <p>Forward a message or upload a chat screenshot. SpamWatch AI analyzes text patterns, sources, and context to spot fake or manipulated messages instantly.</p>
+
+      <h3>3️⃣ Deepfake Image & Video Detector</h3>
+      <p>Upload an image or video to check for AI-generated deepfakes. Our system uses facial recognition and deep learning to flag synthetic or manipulated visuals.</p>
+
+      <h3>4️⃣ PDF & Document Checker</h3>
+      <p>Upload any PDF or text file. The tool reads hidden metadata, checks for suspicious links, and scans content for fake claims, spam, or misinformation.</p>
+
+      <h3>5️⃣ Usage Dashboard & Reports</h3>
+      <p>Your personal dashboard keeps track of your scans, history, and tool usage — helping you monitor digital safety over time.</p>
+    </section>
+
+    <section class="founder">
+      <img src="{{ url_for('static', filename='static_css/founder.jpeg') }}" alt="Founder Photo">
+      <h2>About Me — The Founder</h2>
+      <p>Hi! I’m <strong>Mandavi Vaishya</strong>, the creator of <strong>SpamWatch AI</strong>. As a tech enthusiast and aspiring data analyst, I believe that technology should empower people to make informed decisions and stay safe online. I built SpamWatch AI to solve a real problem — the flood of fake news, scams, and misleading content we all face daily. Thank you for trusting SpamWatch AI to protect what matters most: <em>your peace of mind</em>.</p>
+    </section>
+    -->
+    </div> 
+
+  <section class="why-us section-animate">
+  <h2>Why SpamWatch.AI?</h2>
+  <p>
+    In a world flooded with AI-generated content, scams, and deepfakes, it's getting harder to know what’s real.
+    <strong>SpamWatch.AI</strong> helps you stay ahead by using powerful AI models to detect and differentiate real from fake.
+  </p>
+</section>
+
+<section class="how-it-works section-animate">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <h3>1. Upload</h3>
+      <p>Upload email text, images, or videos suspected to be fake or spam.</p>
+    </div>
+    <div class="step">
+      <h3>2. Analyze</h3>
+      <p>Our AI model runs advanced detection algorithms in real-time.</p>
+    </div>
+    <div class="step">
+      <h3>3. Detect</h3>
+      <p>Receive a confidence score and verdict on whether the content is genuine or spam / deepfake.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tools section-animate">
+  <h2>Our AI Tools</h2>
+  <ul>
+    <li>🔍 Spam Email Detector</li>
+    <li>🧠 Deepfake Image Analyzer</li>
+    <li>🧠 Deepfake Video Analyzer</li>
+  </ul>
+</section>
+
+<section class="cta section-animate">
+  <h2>Ready to Stay Safe?</h2>
+  <p>Try SpamWatch.AI now and detect spam like a pro!</p>
+  <!-- <button a href="{{ url_for('index') }}" class="btn primary" >Start Detecting</button> -->
+  <a href="{{ url_for('index') }}" class="btn primary">Start Detecting
+</section>
+
+<footer>
+  <p>&copy; 2025 SpamWatch.AI • Built with ❤️ using AI</p>
+</footer>
+
+    
+  
+</body>
+<script>
+// Animate tool cards on scroll
+function animateCards() {
+  const cards = document.querySelectorAll('.card');
+  const trigger = window.innerHeight * 0.92;
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < trigger) {
+      card.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', animateCards);
+window.addEventListener('DOMContentLoaded', animateCards);
+
+// Animate about sections on scroll
+function animateAboutSections() {
+  const aboutSections = document.querySelectorAll('.about .container > section, .about .founder');
+  const trigger = window.innerHeight * 0.92;
+  aboutSections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < trigger) {
+      sec.classList.add('visible');
+    }
+  });
+}
+
+// Animate new sections on scroll
+function animateNewSections() {
+  const newSections = document.querySelectorAll('.section-animate');
+  const trigger = window.innerHeight * 0.92;
+  newSections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < trigger) {
+      sec.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', animateCards);
+window.addEventListener('scroll', animateAboutSections);
+window.addEventListener('scroll', animateNewSections);
+window.addEventListener('DOMContentLoaded', animateCards);
+window.addEventListener('DOMContentLoaded', animateAboutSections);
+window.addEventListener('DOMContentLoaded', animateNewSections);
+</script>
+</body>
+</html>
