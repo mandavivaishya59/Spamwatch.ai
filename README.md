@@ -30,17 +30,4 @@ It empowers users to verify the authenticity of digital content by leveraging **
 - **Others:** Pandas, OpenCV, TensorFlow / PyTorch  
 
 ---
-
-## 📂 Project Structure  
-```bash
-SpamWatch-AI/
-│── frontend/              # UI files (HTML, CSS )
-│── backend/               # Flask server code
-│── models/                # Pre-trained AI/ML models
-│── datasets/              # Training & testing datasets
-│── static/                # Assets (images, icons)
-│── templates/             # Web templates
-│── utils/                 # Helper functions (logging, encryption, etc.)
-│── requirements.txt       # Python dependencies
-│── app.py                 # Main backend app
-│── README.md              # Project documentation
+run app.py to see the project works  
